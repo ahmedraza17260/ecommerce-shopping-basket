@@ -21,7 +21,8 @@ class Basket extends Component {
                             {cartItems.map((item) => (
                                 <li key={item.id}>
                                     <b>{item.title} <br /> Price: {item.price} </b>  <br />
-                                    Quantity: {item.count} <br /> Item Price: {item.price * item.count}
+                                    Quantity: {item.count} <br /> Quantity into Price : {item.count} X {util.formatCurrency(item.price)}<br />
+                                    Item Price: {item.price * item.count}
                                     <button
                                         style={{ float: "right" }}
                                         className="btn1 btn-danger btn-xs"
@@ -30,7 +31,7 @@ class Basket extends Component {
                                         }>X
                                     </button>
                                     <br />
-                                    {item.count} X {util.formatCurrency(item.price)}
+                                    {/* {item.count} X {util.formatCurrency(item.price)} */}
                                 </li>
                             ))}
                         </ul>
@@ -42,7 +43,7 @@ class Basket extends Component {
                             )}
                         </b>
                         <button
-                            onClick={() => alert("Todo: Implement checkout page.")}
+                            onClick={() => alert("Implement checkout page.")}
                             className="btn1 btn-primary">
                             CheckOut
                         </button>
