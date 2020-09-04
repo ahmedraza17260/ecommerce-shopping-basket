@@ -15,7 +15,11 @@ class Products extends Component {
                         href={`#${product.id}`}
                         onClick={(e) => this.props.addToCart(this.props.cartItems, product)}
                     >
-                        <img src={`products/${product.sku}_2.jpg`} alt={product.title} />
+                        {/* <img src={`${product.imageUrl}`} alt={product.title} /> */}
+                        {/* <img src={`$product.url`} alt={product.title} /> */}
+                        <img src={`${product.sku}_2jpg`} alt={product.title} />
+                        {/* <img src={`products/${product.sku}_2.jpg`} alt={product.title} /> */}
+
                         <p style={{ color: "black" }}>{product.title}</p>
                     </a>
                     <b>{util.formatCurrency(product.price)}</b>

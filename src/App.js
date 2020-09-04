@@ -3,9 +3,19 @@ import { Provider } from "react-redux";
 import Products from "./components/Product";
 import Filter from "./components/Filter";
 import Basket from "./components/Basket";
-import store from "./store";
 import "./App.css";
 import Copyright from "./components/Copyright";
+import store from "./store";
+// import { makeServer } from './Mirage/server';
+
+
+//"homepage": "https://ahmedraza17260.github.io/shopping-basket/",
+//"server": "json-server public/db.json --port 8000",
+//"predeploy": "npm run build",
+//"deploy": "gh-pages -d build",
+
+
+//    "imageUrl": "/src/Json/products/img1_1.jpg",
 
 class App extends Component {
   render() {

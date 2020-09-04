@@ -5,10 +5,10 @@ import {
 } from "./types";
 
 export const fetchProducts = () => (dispatch) => {
-  fetch("http://localhost:8000/products")
+  fetch("api/products")
     .then((res) => res.json())
     .catch((err) =>
-      fetch("db.json")
+      fetch("product.json")
         .then((res) => res.json())
         .then((data) => data.products)
     )
@@ -16,6 +16,19 @@ export const fetchProducts = () => (dispatch) => {
       dispatch({ type: FETCH_PRODUCTS, payload: data });
     });
 };
+
+// export const fetchProducts = () => (dispatch) => {
+//   fetch("http://localhost:8000/products")
+//     .then((res) => res.json())
+//     .catch((err) =>
+//       fetch("db.json")
+//         .then((res) => res.json())
+//         .then((data) => data.products)
+//     )
+//     .then((data) => {
+//       dispatch({ type: FETCH_PRODUCTS, payload: data });
+//     });
+// };
 
 export const filterProducts = (products, size) => (dispatch) => {
   dispatch({
@@ -26,8 +39,8 @@ export const filterProducts = (products, size) => (dispatch) => {
         size === ""
           ? products
           : products.filter(
-              (x) => x.availableSizes.indexOf(size.toUpperCase()) >= 0
-            ),
+            (x) => x.availableSizes.indexOf(size.toUpperCase()) >= 0
+          ),
     },
   });
 };
@@ -41,8 +54,8 @@ export const sortProducts = (items, sort) => (dispatch) => {
           ? 1
           : -1
         : a.price < b.price
-        ? 1
-        : -1
+          ? 1
+          : -1
     );
   } else {
     products.sort((a, b) => (a.id > b.id ? 1 : -1));
